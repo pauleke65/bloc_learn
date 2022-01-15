@@ -7,44 +7,26 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AppRouter {
-  final _counterCubit = CounterCubit();
-
   Route onGenerateRoute(RouteSettings routeSettings) {
     switch (routeSettings.name) {
       case '/':
         return MaterialPageRoute(
-          builder: (_) => BlocProvider.value(
-            value: _counterCubit,
-            child: const HomeScreen(),
-          ),
+          builder: (_) => const HomeScreen(),
         );
       case '/second':
         return MaterialPageRoute(
-          builder: (_) => BlocProvider.value(
-            value: _counterCubit,
-            child: const SecondScreen(),
-          ),
+          builder: (_) => const SecondScreen(),
         );
 
       case '/third':
         return MaterialPageRoute(
-          builder: (_) => BlocProvider.value(
-            value: _counterCubit,
-            child: const ThirdScreen(),
-          ),
+          builder: (_) => const ThirdScreen(),
         );
 
       default:
         return MaterialPageRoute(
-          builder: (_) => BlocProvider.value(
-            value: _counterCubit,
-            child: const HomeScreen(),
-          ),
+          builder: (_) => const HomeScreen(),
         );
     }
-  }
-
-  void dispose() {
-    _counterCubit.close();
   }
 }
