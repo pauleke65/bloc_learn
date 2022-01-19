@@ -1,9 +1,10 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
-import 'package:bloc_learn/utils/constants/constants.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:equatable/equatable.dart';
+
+import '../../../../utils/constants/constants.dart';
 
 part 'internet_state.dart';
 

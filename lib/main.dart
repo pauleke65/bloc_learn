@@ -1,4 +1,4 @@
-import 'package:bloc_learn/business_logic/cubits/internet/cubit/internet_cubit.dart';
+import 'business_logic/cubits/internet/cubit/internet_cubit.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -27,8 +27,8 @@ class MyApp extends StatelessWidget {
         BlocProvider(
             create: (context) => InternetCubit(connectivity: connectivity)),
         BlocProvider(
-            create: (context) => CounterCubit(
-                internetCubit: BlocProvider.of<InternetCubit>(context)))
+          create: (context) => CounterCubit(),
+        )
       ],
       child: MaterialApp(
         title: 'Flutter Demo',
