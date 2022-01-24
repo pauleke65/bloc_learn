@@ -1,3 +1,4 @@
+import 'utils/app_bloc_observer.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:path_provider/path_provider.dart';
 
@@ -15,12 +16,15 @@ void main() async {
   final storage = await HydratedStorage.build(
       storageDirectory: await getApplicationDocumentsDirectory());
 
+  final observer = AppBlocObserver();
+
   HydratedBlocOverrides.runZoned(
     () => runApp(MyApp(
       appRouter: AppRouter(),
       connectivity: Connectivity(),
     )),
     storage: storage,
+    blocObserver: observer,
   );
 }
 
